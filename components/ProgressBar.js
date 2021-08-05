@@ -1,3 +1,32 @@
+/**
+ * 
+ * PurgeCSS:
+ * text-red-200
+ * text-green-200
+ * text-yellow-200
+ * text-gray-200
+ * text-purple-200
+ * text-indigo-200
+ * text-blue-200
+ * text-pink-200
+ * text-red-500
+ * text-green-500
+ * text-yellow-500
+ * text-gray-500
+ * text-purple-500
+ * text-indigo-500
+ * text-blue-500
+ * text-pink-500
+ * text-red-600
+ * text-green-600
+ * text-yellow-600
+ * text-gray-600
+ * text-purple-600
+ * text-indigo-600
+ * text-blue-600
+ * text-pink-600
+ */
+
 export default function ProgressBar({ color, propertyName, rating }) {
     const widthAmount = () => {
         if (rating == 0) return `0`
