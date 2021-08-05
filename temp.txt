@@ -1,0 +1,81 @@
+
+
+  let randomColors = []
+  function getRandomRgb() {
+    var num = Math.round(0xffffff * Math.random());
+    var r = num >> 16;
+    var g = num >> 8 & 255;
+    var b = num & 255;
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  }
+  for (let i = 0; i < catBreeds.length; i++) {
+    randomColors.push(getRandomRgb())
+  }
+  
+  const getBarChartData = (catAttr) => {
+    
+    let catAttrData = []
+    for (let cat of catData) {
+      catAttrData.push([cat.name, cat[catAttr]])
+    }
+    catAttrData.sort((a, b) => {
+      return a[1] - b[1]
+    })
+
+    return {
+      labels: catBreeds,
+      datasets: [
+        {
+          label: catAttr,
+          data: catAttrData.map(cat => { return cat[1] }),
+          backgroundColor: randomColors,
+          borderColor: randomColors,
+          borderWidth: 1
+        }
+      ]
+    }
+  }
+
+  const getBarChartOptions = (catAttr) => {
+    const options = {
+      indexAxis: 'x',
+      elements: {
+        bar: {
+          borderWidth: 1,
+        },
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: true,
+          text: `All cat ${catAttr} data`,
+        },
+      },
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          ticks: {
+            font: {
+              size: 5
+            }
+          }
+        }
+      }
+    }
+    return options
+  }
+
+
+ <Bar data={getBarChartData('intelligence')} options={getBarChartOptions('intelligence')} className="relative " />
+
+const sortDataByAttr = (catAttr) => {
+    let catAttrData = []
+    for (let cat of catData) {
+      catAttrData.push([cat.name, cat[catAttr]])
+    }
+    catAttrData.sort((a, b) => { return a[1] - b[1] })
+    return catAttrData
+  }
