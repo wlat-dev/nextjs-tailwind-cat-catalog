@@ -1,7 +1,7 @@
 # nextjs-tailwind-cat-catalog
 https://nextjs-tailwind-cat-catalog.vercel.app/cats
 
-Responsive "cat catalog" demoing data retrieval from an external API, static generation, and dynamic routing in Next.js. Styling done via TailwindCSS.
+Responsive "cat catalog" demoing data retrieval from an external API, static generation, and dynamic routing in [Next.js](https://nextjs.org/). Styling done via [TailwindCSS](https://tailwindcss.com/).
 
 [./components/pages/cats/index.js ](https://github.com/wlat-dev/nextjs-tailwind-cat-catalog/blob/main/pages/cats/index.js)
 - getStaticProps fetches data, making an async API call to The Cat API's breed listing and returning the catBreeds object.
